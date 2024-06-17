@@ -1,0 +1,37 @@
+.TH GITM 1 "June 2024" "1.0.0" "User Commands"
+.SH NAME
+gitm \- Script to configure Git and generate a GPG key. Also you can store a token to manage authentication
+.SH SYNOPSIS
+.B gitm
+.RI [\--name\ <name>]
+.RI [\--mail\ <email>]
+.RI [\--gpg\ <true|false>]
+.RI [\--token\ <token>]
+.SH DESCRIPTION
+.B gitm
+is a script to configure Git with a specified user name and email, optionally generate a GPG key, and set up Git to use a provided authentication token.
+.SH OPTIONS
+.TP
+.B \--name
+Specify the user name for Git configuration.
+.TP
+.B \--mail
+Specify the email for Git configuration.
+.TP
+.B \--gpg
+Specify whether to generate a GPG key (true or false). Default is true.
+.TP
+.B \--token
+Specify a token to configure Git for authentication.
+.SH EXAMPLES
+Configure Git with name and email, generate GPG key, and set up authentication token:
+.nf
+gitm --name "Your Name" --mail "your_email@example.com" --gpg true --token "your_github_token"
+.fi
+.SH AUTHOR
+Written by gorrotowi.
+.SH REPORTING BUGS
+Report bugs to sebastian.devmobile.com.
+.SH COPYRIGHT
+This is free software: you are free to change and redistribute it. There is NO WARRANTY, to the extent permitted by law.
+
