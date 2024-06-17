@@ -2,7 +2,8 @@
 
 # Function to display usage information
 usage() {
-    echo "Usage: $0 --name <name> --mail <email> [--gpg <true|false>] [--token <token>]"
+    # echo "Usage: $0 --name <name> --mail <email> [--gpg <true|false>] [--token <token>]"
+    echo "Usage: $0 --name <name> --mail <email> [--gpg <true|false>]"
     exit 1
 }
 
@@ -15,7 +16,7 @@ while [[ "$#" -gt 0 ]]; do
         --name) NAME="$2"; shift ;;
         --mail) EMAIL="$2"; shift ;;
         --gpg) CREATE_GPG="$2"; shift ;;
-        --token) TOKEN="$2"; shift ;;
+        # --token) TOKEN="$2"; shift ;;
         *) usage ;;
     esac
     shift
@@ -111,12 +112,12 @@ EOF
 fi
 
 # Configure Git to use the provided token for authentication
-if [ -n "$TOKEN" ]; then
-    echo "Configuring Git to use the provided token for authentication..."
-    git config --global credential.helper store
-    echo "https://USERNAME:$TOKEN@github.com" > ~/.git-credentials
-    echo "Git configured to use the provided token for authentication."
-fi
+# if [ -n "$TOKEN" ]; then
+#     echo "Configuring Git to use the provided token for authentication..."
+#     git config --global credential.helper store
+#     echo "https://USERNAME:$TOKEN@github.com" > ~/.git-credentials
+#     echo "Git configured to use the provided token for authentication."
+# fi
 
 echo "Git configuration completed successfully."
 
